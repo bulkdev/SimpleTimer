@@ -19,10 +19,15 @@ const TIMER = 1000;
 
     public function onRun($currentTick, $this->player){
       $timea = substr($this->timer, 1);
-      $timeb = substr($this->time, 2, 3);
+      $timeb = substr($this->timer, 2, 3);
       
         $this->getOwner();
         $this->player->sendMessage(TextFormat::GREEN."Time:" . $timea . ":" . $timeb . "");
+        $this->timer--;
+        if($this->timer == 0){
+$this->player->sendMessage(TextFormat::RED."BYE");
+$this->player-kick();
+        }
     }
 
 }
