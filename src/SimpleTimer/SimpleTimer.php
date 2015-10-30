@@ -16,7 +16,7 @@ $this->getServer()->getPluginManager()->registerEvents($this, $this);
 
 public function onJoin(PlayerJoinEvent $event){
 $player = $event->getPlayer();
-$this->getServer()->getScheduler()->scheduleRepeatingTask(new Timer($this), 1 * 20);
+$this->getServer()->getScheduler()->scheduleRepeatingTask(new Timer($this, $player), 1 * 20);
 }
 
 }
